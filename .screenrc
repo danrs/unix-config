@@ -1,0 +1,51 @@
+# GNU Screen - main configuration file
+# All other .screenrc files will source this file to inherit settings.
+
+#################################################################
+#                    SCREEN CHEATSHEET                          #
+# screen -ls                    #list sessions                  #
+# screen -r [<session_number>]  #reattach                       #
+# screen -XS <session_number>   #kill                           #
+#                                                               #
+# Ctrl+a combos:                                                #
+#                   "           #change window                  #
+#               <number>        #go to window <number>          #
+#                   d           #detach                         #
+#                   c           #create                         #
+#                   k           #kill                           #
+#                   n           #next window                    #
+#                   p           #prev window                    #
+#                   S           #horizontal split               #
+#                   |           #vertical split                 #
+#                 <tab>         #switch pane                    #
+#                   X           #collapse current pane          #
+#################################################################
+
+
+# Make vim and less buffers close properly
+altscreen on
+
+# Don't show copyright splash
+startup_message off
+
+# Magic for 256-color screen
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+defbce "on"
+term screen-256color #not sure about this line
+
+# Cache 10000 lines for scrollback
+defscrollback 10000
+
+# Status line at the bottom
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+
+# Hide hardstatus: ctrl-a f
+bind f eval "hardstatus ignore"
+# Show hardstatus: ctrl-a F
+bind F eval "hardstatus alwayslastline"
+
+vbell off
+bell_msg ""
