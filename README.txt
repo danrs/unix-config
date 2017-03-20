@@ -1,7 +1,6 @@
 This repo holds all my unix config files
 
-To set up, symlink all the files and folders in this directory to home directory:
-$ ln -s ~/unix-config/.[!.]* ~ #symlink config to home directory (but not . or ..)
+To install, run
+$ ./install.sh
 
-To install vim plugins, open vim and run
-:PlugInstall
+The osx directory contains files specifically related to osx, which must be installed separately.

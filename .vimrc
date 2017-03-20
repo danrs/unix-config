@@ -11,10 +11,7 @@ call plug#begin()
 
 "some colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'aliou/moriarty.vim'
-Plug 'bounceme/highwayman'
-Plug 'gummesson/stereokai.vim'
-Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'nightsense/seabird'
 
 "Add plugins to &runtimepath
 call plug#end()
