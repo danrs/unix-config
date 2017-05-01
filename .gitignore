@@ -1,2 +1,4 @@
 # ignore downloaded vim plugins
 .vim/plugged
+.DS_Store
+*/.DS_Store
