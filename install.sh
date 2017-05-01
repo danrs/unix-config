@@ -3,6 +3,8 @@
 # This repo holds all my unix config files
 echo "Symlinking unix-config to home directory:"
 ln -s ~/unix-config/.[!.]* ~
+rm ~/.git
+rm ~/.gitignore
 
 echo "installing git-aware-prompt"
 mkdir ~/.bash

@@ -17,6 +17,7 @@ Plug 'nightsense/seabird'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"APPEARANCE
 "colorscheme
 set background=dark
 colorscheme gruvbox
@@ -29,12 +30,18 @@ set ruler           "show column and stuff
 set matchtime=1
 highlight MatchParen cterm=none ctermbg=none ctermfg=cyan
 
+"Change cursor between modes
+"iTerm2
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+"INDENTATION
 "auto-indenting
 set smartindent
 set autoindent
 filetype indent on
 
-"INDENTATION
 "tab settings for most files
 "tab length is 4, tabs are spaces, backspace kills 4-space-tabs
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
@@ -61,6 +68,7 @@ set list lcs=tab:\ \
 "make backspacing work over indents, end of line, start of edited text:
 set backspace=indent,eol,start
 
+"COMMANDS
 "tab autocompletion for commands
 set wildmode=longest,list,full
 set wildmenu
