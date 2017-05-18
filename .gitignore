@@ -1,4 +1,5 @@
 # ignore downloaded vim plugins
+.vim/.netrwhist
 .vim/plugged
 .DS_Store
 */.DS_Store
