@@ -2,6 +2,9 @@
 alias ll='ls -l'
 alias la='ls -la'
 
+#ipython alias
+alias py="ipython"
+
 # make grep coloured
 export GREP_OPTIONS='--color=always'
 
