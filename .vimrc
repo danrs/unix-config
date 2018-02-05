@@ -101,3 +101,6 @@ set tags=./tags,tags;$HOME
 "NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
 set mouse=a
 set ttymouse=xterm2
+
+"make the buffer work with clipboard
+set clipboard=unnamed
