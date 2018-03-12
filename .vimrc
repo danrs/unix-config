@@ -49,6 +49,7 @@ filetype indent on
 
 "tab settings for most files
 "tab length is 4, tabs are spaces, backspace kills 4-space-tabs
+set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 
 "tab settings for Python
