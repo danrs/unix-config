@@ -95,8 +95,11 @@ noremap <F4> :set number!<CR>
 "highlight trailing whitespace
 match ErrorMsg '\s\+$'
 
-"ctags: generate tags in project root and vim will see them anywhere beneath that
+"ctags: generate tags in project root with `ctags -R *` and vim will see them anywhere beneath that
 set tags=./tags,tags;$HOME
+
+"cscope: generate tags in project root with `cscope -Rb`
+source ~/.vim/cscope_maps.vim
 
 "enable mouse in all modes
 "NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
