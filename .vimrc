@@ -43,7 +43,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 "INDENTATION
 "auto-indenting
-set smartindent
 set autoindent
 filetype indent on
 
@@ -60,16 +59,12 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set softtab
 "tab length is 3, tabs are spaces, backspace kills 3-space-tabs
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab|set softtabstop=3
 
-"tab settings for json
+"tab settings for json,html,yaml
 "tab length is 2, tabs are spaces, backspace kills 2-space-tabs
-autocmd FileType json set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
-
-"tab settings for html
-"tab length is 2, tabs are spaces, backspace kills 2-space-tabs
-autocmd FileType html set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
+autocmd FileType json,html,yaml set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 
 "tab settings for Makefiles
-"tab length is 4, tabs are tabs, backspace kills 2-space-tabs
+"tab length is 8, tabs are tabs, backspace kills 2-space-tabs
 autocmd FileType make set tabstop=8|set shiftwidth=8|set noexpandtab|set softtabstop=0
 
 "make normal mode cursor go to start (not end) of an initial tab character:
