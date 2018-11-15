@@ -12,6 +12,7 @@ call plug#begin()
 "some colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'nightsense/seabird'
+Plug 'keith/swift.vim'
 
 "Add plugins to &runtimepath
 call plug#end()
