@@ -9,7 +9,7 @@ endif
 "vim-plug plugins (Make sure you install them with :PlugInstall)
 call plug#begin()
 
-"some colorschemes
+"To add a plugin, simply copy the end of the github url here
 Plug 'morhetz/gruvbox'
 Plug 'nightsense/seabird'
 Plug 'keith/swift.vim'
