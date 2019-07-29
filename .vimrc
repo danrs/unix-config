@@ -99,6 +99,8 @@ match ErrorMsg '\s\+$'
 set tags=./tags,tags;$HOME
 
 "cscope: generate tags in project root with `cscope -Rb`
+"Set $CSCOPE_DB to point to a cscope db, or else open vim in the db folder
+"http://cscope.sourceforge.net/cscope_vim_tutorial.html
 source ~/.vim/cscope_maps.vim
 
 "enable mouse in all modes
