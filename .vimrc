@@ -11,7 +11,6 @@ call plug#begin()
 
 "To add a plugin, simply copy the end of the github url here
 Plug 'morhetz/gruvbox'
-Plug 'nightsense/seabird'
 Plug 'keith/swift.vim'
 
 "Add plugins to &runtimepath
