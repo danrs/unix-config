@@ -7,6 +7,8 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lolq = log --graph --decorate --pretty=oneline --abbrev-commit --all -n20
+    lolb = log --graph --decorate --abbrev-commit --all
+    lold = log --all --graph --oneline --simplify-by-decoration --date=short --pretty=format:"%C(yellow)%h%Creset%C(red)%C(bold)%d%Creset%C(white)(%cd)%Creset %s"
 [color]
     branch = auto
     diff = auto

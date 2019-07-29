@@ -12,6 +12,7 @@ call plug#begin()
 "To add a plugin, simply copy the end of the github url here
 Plug 'morhetz/gruvbox'
 Plug 'keith/swift.vim'
+Plug 'thetomcraig/xenomorph.vim'
 
 "Add plugins to &runtimepath
 call plug#end()
