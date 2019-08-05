@@ -8,7 +8,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lolq = log --graph --decorate --pretty=oneline --abbrev-commit --all -n20
     lolb = log --graph --decorate --abbrev-commit --all
-	lold = log --graph --all --oneline --simplify-by-decoration --date=format:%Y-%m-%d\\ %H:%M:%S --pretty=format:\"%C(yellow)%h%C(auto)%d% %C(white) %cd%Creset %s\"
+	lold = log --graph --decorate --all --oneline --date=format:%Y-%m-%d\\ %H:%M:%S --pretty=format:\"%C(yellow)%h%C(auto)%d% %C(white) %cd%Creset %s\"
 [color]
     branch = auto
     diff = auto
