@@ -1,3 +1,6 @@
 *~
 .DS_Store
 *.swp
+tags
+cscope.out
+cscope.files
