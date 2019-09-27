@@ -37,7 +37,7 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-"VTE-compatible terminals including gnome 3.x and xterm)
+"VTE-compatible terminals (including gnome 3.x and xterm)
 "" let &t_SI = "\<Esc>[6 q"
 "" let &t_SR = "\<Esc>[4 q"
 "" let &t_EI = "\<Esc>[2 q"
