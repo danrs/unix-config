@@ -1,20 +1,20 @@
 [user]
-	name = Daniel Smith
-	email = danrs@users.noreply.github.com
+    name = Daniel Smith
+    email = danrs@users.noreply.github.com
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	lolq = log --graph --decorate --pretty=oneline --abbrev-commit --all -n20
+    lolq = log --graph --decorate --pretty=oneline --abbrev-commit --all -n20
     lolb = log --graph --decorate --abbrev-commit --all
-	lold = log --graph --decorate --all --oneline --date=format:%Y-%m-%d\\ %H:%M:%S --pretty=format:\"%C(yellow)%h%C(auto)%d% %C(white) %cd%Creset %s\"
+    lold = log --graph --decorate --all --oneline --date=format:%Y-%m-%d\\ %H:%M:%S --pretty=format:\"%C(yellow)%h%C(auto)%d% %C(white) %cd%Creset %s\"
 [color]
     branch = auto
     diff = auto
     interactive = auto
     status = auto
 [core]
-	excludesfile = /Users/dansmith/.gitignore_global
+    excludesfile = /Users/dansmith/.gitignore_global
 [push]
-	default = simple
+    default = simple
