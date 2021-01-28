@@ -7,7 +7,7 @@ alias py="ipython"
 alias gti="git"
 
 # make grep coloured
-export GREP_OPTIONS='--color=always'
+alias grepc='grep --color=always'
 
 # osx colour stuff
 export CLICOLOR=1
