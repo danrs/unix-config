@@ -21,7 +21,7 @@ call plug#end()
 "APPEARANCE
 "colorscheme
 set background=dark
-colorscheme gruvbox
+colorscheme elflord
 syntax on       "syntax highlighting
 
 set number          "show line numbers
@@ -38,9 +38,9 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 "VTE-compatible terminals (including gnome 3.x and xterm)
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+"let &t_SI = "\<Esc>[6 q"
+"let &t_SR = "\<Esc>[4 q"
+"let &t_EI = "\<Esc>[2 q"
 
 "INDENTATION
 "auto-indenting
@@ -110,3 +110,11 @@ source ~/.vim/cscope_maps.vim
 
 "make the buffer work with clipboard
 set clipboard=unnamed
+
+"fix home and end key on mac
+map  <home>
+imap  <home>
+cmap  <home>
+map  <end>
+imap  <end>
+cmap  <end>
