@@ -1,4 +1,5 @@
 # alias shortcuts for ls
+alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -la'
 
@@ -7,7 +8,7 @@ alias py="ipython"
 alias gti="git"
 
 # make grep coloured
-alias grepc='grep --color=always'
+alias grep='grep --color=auto'
 
 # osx colour stuff
 export CLICOLOR=1

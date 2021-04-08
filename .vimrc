@@ -38,9 +38,9 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 "VTE-compatible terminals (including gnome 3.x and xterm)
-"" let &t_SI = "\<Esc>[6 q"
-"" let &t_SR = "\<Esc>[4 q"
-"" let &t_EI = "\<Esc>[2 q"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 "INDENTATION
 "auto-indenting
@@ -60,9 +60,9 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set softtab
 "tab length is 3, tabs are spaces, backspace kills 3-space-tabs
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab|set softtabstop=3
 
-"tab settings for json,html,yaml
+"tab settings for json,html,yaml,cmake
 "tab length is 2, tabs are spaces, backspace kills 2-space-tabs
-autocmd FileType json,html,yaml set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
+autocmd FileType json,html,yaml,cmake set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 
 "tab settings for Makefiles
 "tab length is 8, tabs are tabs, backspace kills 2-space-tabs
@@ -105,8 +105,8 @@ source ~/.vim/cscope_maps.vim
 
 "enable mouse in all modes
 "NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
-set mouse=a
-set ttymouse=xterm2
+"set mouse=a
+"set ttymouse=xterm2
 
 "make the buffer work with clipboard
 set clipboard=unnamed
