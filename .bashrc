@@ -1,4 +1,4 @@
-if [ uname == 'Linux' ]
+if [[ "$OSTYPE" == "linux"* ]]
 then
     # fix linux ls colors
     alias ls='ls --color=auto'
@@ -6,7 +6,7 @@ then
     # set up bash completion
     source /usr/share/bash-completion/completions/git
     # if not working, run `sudo apt-get install git-core bash-completion`
-elif [ uname == 'Darwin' ]
+elif [[ "$OSTYPE" == "Darwin"* ]]
 then
     # osx colour stuff
     export CLICOLOR=1
@@ -14,8 +14,9 @@ then
     alias ls='ls -G'
 
     # set up bash completion
-    brew install bash-completion # use bash-completion@2 for $BASH_VERSION > 4
-    [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+    #brew install bash-completion # use bash-completion@2 for $BASH_VERSION > 4
+    #[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+    source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi
 
 alias ll='ls -l'
