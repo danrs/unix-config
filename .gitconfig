@@ -19,3 +19,5 @@
 	excludesfile = /home/dan/.gitignore_global
 [push]
     default = simple
+[pull]
+	rebase = false
