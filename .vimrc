@@ -11,19 +11,40 @@ call plug#begin()
 
 "To add a plugin, simply copy the end of the github url here
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'hiroakis/cyberspace.vim'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'itchyny/lightline.vim'
 Plug 'keith/swift.vim'
-Plug 'AlessandroYorba/Alduin'
 
 "Add plugins to &runtimepath
 call plug#end()
+
+"enable lightline
+set laststatus=2
+set noshowmode
+set nocompatible
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"Determine Operating System
+if !exists("os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        "`Darwin` means osx
+        "`Linux` means Linux
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+let g:os = substitute(system('uname'), "\n", "", "")
+
 "APPEARANCE
-"colorscheme
 set background=dark
 colorscheme elflord
-syntax on       "syntax highlighting
-
+"let g:lightline = { 'colorscheme': 'seoul256' }| colorscheme gruvbox
+"let g:lightline = { 'colorscheme': 'powerline' }| colorscheme PaperColor
+let g:lightline = { 'colorscheme': 'powerline' }| colorscheme cyberspace
+syntax on           "syntax highlighting
 set number          "show line numbers
 set ruler           "show column and stuff
 
@@ -32,41 +53,44 @@ set matchtime=1
 highlight MatchParen cterm=none ctermbg=none ctermfg=cyan
 
 "Change cursor between modes
-"iTerm2
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"Windows/wsl is still todo
+if g:os == "Darwin"
+    "iTerm2
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-"VTE-compatible terminals (including gnome 3.x and xterm)
-"let &t_SI = "\<Esc>[6 q"
-"let &t_SR = "\<Esc>[4 q"
-"let &t_EI = "\<Esc>[2 q"
+    "fix home and end key on mac
+    map  <home>
+    imap  <home>
+    cmap  <home>
+    map  <end>
+    imap  <end>
+    cmap  <end>
+else
+    "VTE-compatible terminals (including gnome 3.x and xterm)
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
+endif
 
 "INDENTATION
 "auto-indenting
 set autoindent
 filetype indent on
 
-"tab settings for most files
-"tab length is 4, tabs are spaces, backspace kills 4-space-tabs
+"tab settings
+"tabstop is width of \t, shiftwidth is indent width, softtabstop is width of
+"tab/backspace keypress. expandtab turns tabs into spaces.
+"If expandtab, keep all the numbers the same
+"If noexpandtab, put softtabstop=0 and all other numbers the same
 set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
-
-"tab settings for Python
-"tab length is 4, tabs are spaces, backspace kills 4-space-tabs
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
-
-"tab settings for Perl
-"tab length is 3, tabs are spaces, backspace kills 3-space-tabs
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab|set softtabstop=3
-
-"tab settings for json,html,yaml,cmake
-"tab length is 2, tabs are spaces, backspace kills 2-space-tabs
 autocmd FileType json,html,yaml,cmake set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
-
-"tab settings for Makefiles
-"tab length is 8, tabs are tabs, backspace kills 2-space-tabs
 autocmd FileType make set tabstop=8|set shiftwidth=8|set noexpandtab|set softtabstop=0
+autocmd FileType go set tabstop=4|set shiftwidth=4|set noexpandtab|set softtabstop=0
 
 "make normal mode cursor go to start (not end) of an initial tab character:
 set list lcs=tab:\ \ 
@@ -74,7 +98,6 @@ set list lcs=tab:\ \
 "make backspacing work over indents, end of line, start of edited text:
 set backspace=indent,eol,start
 
-"COMMANDS
 "tab autocompletion for commands
 set wildmode=longest,list,full
 set wildmenu
@@ -103,18 +126,11 @@ set tags=./tags,tags;$HOME
 "http://cscope.sourceforge.net/cscope_vim_tutorial.html
 source ~/.vim/cscope_maps.vim
 
-"enable mouse in all modes
+"enable mouse in all modes (off by default cos it's annoying)
 "NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
 "set mouse=a
 "set ttymouse=xterm2
 
-"make the buffer work with clipboard
+"yank to clipboard (requires clipboard support, which usually means gvim)
 set clipboard=unnamed
 
-"fix home and end key on mac
-map  <home>
-imap  <home>
-cmap  <home>
-map  <end>
-imap  <end>
-cmap  <end>
