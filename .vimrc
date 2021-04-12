@@ -1,3 +1,4 @@
+set nocompatible
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -23,7 +24,6 @@ call plug#end()
 "enable lightline
 set laststatus=2
 set noshowmode
-set nocompatible
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Determine Operating System
