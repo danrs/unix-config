@@ -6,7 +6,7 @@ then
     # set up bash completion
     source /usr/share/bash-completion/completions/git
     # if not working, run `sudo apt-get install git-core bash-completion`
-elif [[ "$OSTYPE" == "Darwin"* ]]
+elif [[ "$OSTYPE" == "darwin"* ]]
 then
     # osx colour stuff
     export CLICOLOR=1
