@@ -1,4 +1,3 @@
-set nocompatible
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -60,19 +59,20 @@ if g:os == "Darwin"
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-    "fix home and end key on mac
-    map  <home>
-    imap  <home>
-    cmap  <home>
-    map  <end>
-    imap  <end>
-    cmap  <end>
 else
     "VTE-compatible terminals (including gnome 3.x and xterm)
     let &t_SI = "\<Esc>[6 q"
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
 endif
+
+"fix home and end key
+map  <home>
+imap  <home>
+cmap  <home>
+map  <end>
+imap  <end>
+cmap  <end>
 
 "INDENTATION
 "auto-indenting
