@@ -37,6 +37,13 @@ if !exists("os")
 endif
 let g:os = substitute(system('uname'), "\n", "", "")
 
+map  <home>
+imap  <home>
+cmap  <home>
+map  <end>
+imap  <end>
+cmap  <end>
+
 "APPEARANCE
 set background=dark
 colorscheme elflord
@@ -65,14 +72,6 @@ else
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
 endif
-
-"fix home and end key
-map  <home>
-imap  <home>
-cmap  <home>
-map  <end>
-imap  <end>
-cmap  <end>
 
 "INDENTATION
 "auto-indenting

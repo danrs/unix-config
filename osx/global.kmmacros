@@ -13,25 +13,172 @@
 				<key>Actions</key>
 				<array>
 					<dict>
-						<key>IsDisclosed</key>
-						<false/>
+						<key>Conditions</key>
+						<dict>
+							<key>ConditionList</key>
+							<array>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.Excel</string>
+										<key>Name</key>
+										<string>Microsoft Excel</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft Excel.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.Outlook</string>
+										<key>Name</key>
+										<string>Microsoft Outlook</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft Outlook.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.onenote.mac</string>
+										<key>Name</key>
+										<string>Microsoft OneNote</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft OneNote.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.Powerpoint</string>
+										<key>Name</key>
+										<string>Microsoft PowerPoint</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft PowerPoint.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.teams</string>
+										<key>Name</key>
+										<string>Microsoft Teams</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft Teams.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.microsoft.Word</string>
+										<key>Name</key>
+										<string>Microsoft Word</string>
+										<key>NewFile</key>
+										<string>/Applications/Microsoft Word.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.tinyspeck.slackmacgap</string>
+										<key>Name</key>
+										<string>Slack</string>
+										<key>NewFile</key>
+										<string>/Applications/Slack.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
+							</array>
+							<key>ConditionListMatch</key>
+							<string>Any</string>
+						</dict>
+						<key>ElseActions</key>
+						<array>
+							<dict>
+								<key>KeyCode</key>
+								<integer>115</integer>
+								<key>MacroActionType</key>
+								<string>SimulateKeystroke</string>
+								<key>Modifiers</key>
+								<integer>0</integer>
+								<key>ReleaseAll</key>
+								<false/>
+								<key>TargetApplication</key>
+								<dict/>
+								<key>TargetingType</key>
+								<string>Front</string>
+							</dict>
+						</array>
 						<key>MacroActionType</key>
-						<string>SystemAction</string>
-						<key>SystemAction</key>
-						<string>IncreaseVolume</string>
+						<string>IfThenElse</string>
+						<key>ThenActions</key>
+						<array>
+							<dict>
+								<key>KeyCode</key>
+								<integer>123</integer>
+								<key>MacroActionType</key>
+								<string>SimulateKeystroke</string>
+								<key>Modifiers</key>
+								<integer>256</integer>
+								<key>ReleaseAll</key>
+								<false/>
+								<key>TargetApplication</key>
+								<dict/>
+								<key>TargetingType</key>
+								<string>Front</string>
+							</dict>
+						</array>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>638166961.32132697</real>
+				<real>639899724.94052899</real>
 				<key>ModificationDate</key>
-				<real>638937586.24497497</real>
+				<real>641260434.11419797</real>
+				<key>Name</key>
+				<string>Home Remap</string>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
-						<string>WhileDown</string>
+						<string>Pressed</string>
 						<key>KeyCode</key>
-						<integer>113</integer>
+						<integer>115</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -39,7 +186,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>68BC70D0-33D8-4641-8364-362E96D9490A</string>
+				<string>0FDB6C60-FCC8-4CDD-9AD4-C3CA2325C028</string>
 			</dict>
 		</array>
 		<key>Name</key>
@@ -201,6 +348,21 @@
 									<key>ConditionType</key>
 									<string>Application</string>
 								</dict>
+								<dict>
+									<key>Application</key>
+									<dict>
+										<key>BundleIdentifier</key>
+										<string>com.tinyspeck.slackmacgap</string>
+										<key>Name</key>
+										<string>Slack</string>
+										<key>NewFile</key>
+										<string>/Applications/Slack.app</string>
+									</dict>
+									<key>ApplicationConditionType</key>
+									<string>Active</string>
+									<key>ConditionType</key>
+									<string>Application</string>
+								</dict>
 							</array>
 							<key>ConditionListMatch</key>
 							<string>Any</string>
@@ -208,67 +370,18 @@
 						<key>ElseActions</key>
 						<array>
 							<dict>
-								<key>Conditions</key>
-								<dict>
-									<key>ConditionList</key>
-									<array>
-										<dict>
-											<key>Application</key>
-											<dict>
-												<key>BundleIdentifier</key>
-												<string>org.mozilla.firefox</string>
-												<key>Name</key>
-												<string>Firefox</string>
-												<key>NewFile</key>
-												<string>/Applications/Firefox.app</string>
-											</dict>
-											<key>ApplicationConditionType</key>
-											<string>Active</string>
-											<key>ConditionType</key>
-											<string>Application</string>
-										</dict>
-									</array>
-									<key>ConditionListMatch</key>
-									<string>All</string>
-								</dict>
-								<key>ElseActions</key>
-								<array>
-									<dict>
-										<key>KeyCode</key>
-										<integer>14</integer>
-										<key>MacroActionType</key>
-										<string>SimulateKeystroke</string>
-										<key>Modifiers</key>
-										<integer>4096</integer>
-										<key>ReleaseAll</key>
-										<false/>
-										<key>TargetApplication</key>
-										<dict/>
-										<key>TargetingType</key>
-										<string>Front</string>
-									</dict>
-								</array>
+								<key>KeyCode</key>
+								<integer>119</integer>
 								<key>MacroActionType</key>
-								<string>IfThenElse</string>
-								<key>ThenActions</key>
-								<array>
-									<dict>
-										<key>KeyCode</key>
-										<integer>119</integer>
-										<key>MacroActionType</key>
-										<string>SimulateKeystroke</string>
-										<key>Modifiers</key>
-										<integer>0</integer>
-										<key>ReleaseAll</key>
-										<false/>
-										<key>TargetApplication</key>
-										<dict/>
-										<key>TargetingType</key>
-										<string>Front</string>
-									</dict>
-								</array>
-								<key>TimeOutAbortsMacro</key>
-								<true/>
+								<string>SimulateKeystroke</string>
+								<key>Modifiers</key>
+								<integer>0</integer>
+								<key>ReleaseAll</key>
+								<false/>
+								<key>TargetApplication</key>
+								<dict/>
+								<key>TargetingType</key>
+								<string>Front</string>
 							</dict>
 						</array>
 						<key>MacroActionType</key>
@@ -297,7 +410,7 @@
 				<key>CreationDate</key>
 				<real>639987337.637205</real>
 				<key>ModificationDate</key>
-				<real>639987371.40266597</real>
+				<real>641260453.65587294</real>
 				<key>Name</key>
 				<string>End Remap</string>
 				<key>Triggers</key>
@@ -335,206 +448,25 @@
 				<key>Actions</key>
 				<array>
 					<dict>
-						<key>Conditions</key>
-						<dict>
-							<key>ConditionList</key>
-							<array>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.Excel</string>
-										<key>Name</key>
-										<string>Microsoft Excel</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft Excel.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.Outlook</string>
-										<key>Name</key>
-										<string>Microsoft Outlook</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft Outlook.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.onenote.mac</string>
-										<key>Name</key>
-										<string>Microsoft OneNote</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft OneNote.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.Powerpoint</string>
-										<key>Name</key>
-										<string>Microsoft PowerPoint</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft PowerPoint.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.teams</string>
-										<key>Name</key>
-										<string>Microsoft Teams</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft Teams.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-								<dict>
-									<key>Application</key>
-									<dict>
-										<key>BundleIdentifier</key>
-										<string>com.microsoft.Word</string>
-										<key>Name</key>
-										<string>Microsoft Word</string>
-										<key>NewFile</key>
-										<string>/Applications/Microsoft Word.app</string>
-									</dict>
-									<key>ApplicationConditionType</key>
-									<string>Active</string>
-									<key>ConditionType</key>
-									<string>Application</string>
-								</dict>
-							</array>
-							<key>ConditionListMatch</key>
-							<string>Any</string>
-						</dict>
-						<key>ElseActions</key>
-						<array>
-							<dict>
-								<key>Conditions</key>
-								<dict>
-									<key>ConditionList</key>
-									<array>
-										<dict>
-											<key>Application</key>
-											<dict>
-												<key>BundleIdentifier</key>
-												<string>org.mozilla.firefox</string>
-												<key>Name</key>
-												<string>Firefox</string>
-												<key>NewFile</key>
-												<string>/Applications/Firefox.app</string>
-											</dict>
-											<key>ApplicationConditionType</key>
-											<string>Active</string>
-											<key>ConditionType</key>
-											<string>Application</string>
-										</dict>
-									</array>
-									<key>ConditionListMatch</key>
-									<string>All</string>
-								</dict>
-								<key>ElseActions</key>
-								<array>
-									<dict>
-										<key>KeyCode</key>
-										<integer>0</integer>
-										<key>MacroActionType</key>
-										<string>SimulateKeystroke</string>
-										<key>Modifiers</key>
-										<integer>4096</integer>
-										<key>ReleaseAll</key>
-										<false/>
-										<key>TargetApplication</key>
-										<dict/>
-										<key>TargetingType</key>
-										<string>Front</string>
-									</dict>
-								</array>
-								<key>MacroActionType</key>
-								<string>IfThenElse</string>
-								<key>ThenActions</key>
-								<array>
-									<dict>
-										<key>KeyCode</key>
-										<integer>115</integer>
-										<key>MacroActionType</key>
-										<string>SimulateKeystroke</string>
-										<key>Modifiers</key>
-										<integer>0</integer>
-										<key>ReleaseAll</key>
-										<false/>
-										<key>TargetApplication</key>
-										<dict/>
-										<key>TargetingType</key>
-										<string>Front</string>
-									</dict>
-								</array>
-								<key>TimeOutAbortsMacro</key>
-								<true/>
-							</dict>
-						</array>
+						<key>IsDisclosed</key>
+						<false/>
 						<key>MacroActionType</key>
-						<string>IfThenElse</string>
-						<key>ThenActions</key>
-						<array>
-							<dict>
-								<key>KeyCode</key>
-								<integer>123</integer>
-								<key>MacroActionType</key>
-								<string>SimulateKeystroke</string>
-								<key>Modifiers</key>
-								<integer>256</integer>
-								<key>ReleaseAll</key>
-								<false/>
-								<key>TargetApplication</key>
-								<dict/>
-								<key>TargetingType</key>
-								<string>Front</string>
-							</dict>
-						</array>
-						<key>TimeOutAbortsMacro</key>
-						<true/>
+						<string>SystemAction</string>
+						<key>SystemAction</key>
+						<string>IncreaseVolume</string>
 					</dict>
 				</array>
 				<key>CreationDate</key>
-				<real>639899724.94052899</real>
+				<real>638166961.32132697</real>
 				<key>ModificationDate</key>
-				<real>639987424.87310004</real>
-				<key>Name</key>
-				<string>Home Remap</string>
+				<real>638937586.24497497</real>
 				<key>Triggers</key>
 				<array>
 					<dict>
 						<key>FireType</key>
-						<string>Pressed</string>
+						<string>WhileDown</string>
 						<key>KeyCode</key>
-						<integer>115</integer>
+						<integer>113</integer>
 						<key>MacroTriggerType</key>
 						<string>HotKey</string>
 						<key>Modifiers</key>
@@ -542,7 +474,7 @@
 					</dict>
 				</array>
 				<key>UID</key>
-				<string>0FDB6C60-FCC8-4CDD-9AD4-C3CA2325C028</string>
+				<string>68BC70D0-33D8-4641-8364-362E96D9490A</string>
 			</dict>
 		</array>
 		<key>Name</key>
