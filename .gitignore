@@ -1,9 +1,11 @@
 # ignore downloaded vim plugins
-.vim/.netrwhist
-.vim/plugged
+vim/.vim/.netrwhist
+vim/.vim/plugged
 .DS_Store
 */.DS_Store
 
 # ignore installed git completion scripts
 .bash
-.git-completion.bash
+
+# ignore zim compiled stuff
+*.zwc
