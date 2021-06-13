@@ -9,3 +9,9 @@ vim/.vim/plugged
 
 # ignore zim compiled stuff
 *.zwc
+*.zwc.old
+*.zsh.old
+zsh/.zim/.latest_version
+zsh/.zim/init.zsh
+zsh/.zim/login_init.zsh
+zsh/.zim/modules
