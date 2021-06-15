@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""PLUGIN SETTINGS"""""""""""""""""""""""""""""""""
 "auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -25,7 +25,7 @@ set laststatus=2
 set noshowmode
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Determine Operating System
+"Determine Operating System for use in other settings
 if !exists("os")
     if has("win64") || has("win32") || has("win16")
         let g:os = "Windows"
@@ -37,12 +37,6 @@ if !exists("os")
 endif
 let g:os = substitute(system('uname'), "\n", "", "")
 
-map  <home>
-imap  <home>
-cmap  <home>
-map  <end>
-imap  <end>
-cmap  <end>
 
 "APPEARANCE
 set background=dark
@@ -53,10 +47,14 @@ let g:lightline = { 'colorscheme': 'powerline' }| colorscheme cyberspace
 syntax on           "syntax highlighting
 set number          "show line numbers
 set ruler           "show column and stuff
+set title           "show title with file name
+
+"highlight trailing whitespace
+match ErrorMsg '\s\+$'
 
 "highlight brackets
 set matchtime=1
-highlight MatchParen cterm=none ctermbg=none ctermfg=cyan
+highlight MatchParen cterm=none ctermbg=none ctermfg=DarkMagenta
 
 "Change cursor between modes
 "Windows/wsl is still todo
@@ -65,13 +63,56 @@ if g:os == "Darwin"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_SR = "\<Esc>]50;CursorShape=2\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 else
     "VTE-compatible terminals (including gnome 3.x and xterm)
     let &t_SI = "\<Esc>[6 q"
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
 endif
+
+
+"BEHAVIOUR
+"map home/end shortcuts
+map  <home>
+imap  <home>
+cmap  <home>
+map  <end>
+imap  <end>
+cmap  <end>
+
+set ignorecase     " Do case insensitive matching
+"set smartcase      " Case insensitive if search string is all lowercase
+"set incsearch      " Incremental search
+"set autowrite      " Automatically save before commands like :next and :make
+"set hidden         " Hide buffers instead of closing when opening new buffer
+
+"jump to last position when reopening file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+"tab autocompletion for commands
+set wildmode=longest,list,full
+set wildmenu
+
+"f2 toggles paste mode
+set pastetoggle=<F2>
+
+"f3 toggles search highlighting
+set hlsearch
+noremap <F3> :set hlsearch!<CR>
+
+"f4 toggles line numbers
+noremap <F4> :set number!<CR>
+
+"enable mouse in all modes (off by default cos it's annoying)
+"NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
+"set mouse=a
+"set ttymouse=xterm2
+
+"yank to clipboard (requires clipboard support, which usually means gvim)
+set clipboard=unnamed
+
 
 "INDENTATION
 "auto-indenting
@@ -97,26 +138,8 @@ set list lcs=tab:\ \
 "make backspacing work over indents, end of line, start of edited text:
 set backspace=indent,eol,start
 
-"tab autocompletion for commands
-set wildmode=longest,list,full
-set wildmenu
 
-"display title with file name
-set title
-
-"f2 toggles paste mode
-set pastetoggle=<F2>
-
-"f3 toggles search highlighting
-set hlsearch
-noremap <F3> :set hlsearch!<CR>
-
-"f4 toggles line numbers
-noremap <F4> :set number!<CR>
-
-"highlight trailing whitespace
-match ErrorMsg '\s\+$'
-
+"CTAGS CSCOPE
 "ctags: generate tags in project root with `ctags -R *` and vim will see them anywhere beneath that
 set tags=./tags,tags;$HOME
 
@@ -124,12 +147,4 @@ set tags=./tags,tags;$HOME
 "Set $CSCOPE_DB to point to a cscope db, or else open vim in the db folder
 "http://cscope.sourceforge.net/cscope_vim_tutorial.html
 source ~/.vim/cscope_maps.vim
-
-"enable mouse in all modes (off by default cos it's annoying)
-"NOTE: to use ordinary mouse behaviour, hold shift (Linux) or alt/option (OSX)
-"set mouse=a
-"set ttymouse=xterm2
-
-"yank to clipboard (requires clipboard support, which usually means gvim)
-set clipboard=unnamed
 
