@@ -16,7 +16,7 @@ then
     # set up bash completion
     #brew install bash-completion # use bash-completion@2 for $BASH_VERSION > 4
     #[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-    source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+    #source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi
 
 alias ll='ls -l'
@@ -29,9 +29,10 @@ alias grep='grep --color=auto'
 
 # set up a nice prompt with git integration
 # TODO find a faster version and/or switch to zsh
-export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
-PS1="\u:\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtgrn\]\$\[$txtrst\] "
+#export GITAWAREPROMPT=~/.bash/git-aware-prompt
+#source "${GITAWAREPROMPT}/main.sh"
+#PS1="\u:\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtgrn\]\$\[$txtrst\] "
+PS1="\u:\W \[$txtgrn\]\$\[$txtrst\] "
 
 # set up bash history
 export HISTSIZE=10000
