@@ -133,6 +133,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
+setopt nosharehistory
 
 if [[ "$OSTYPE" == "linux"* ]]
 then
