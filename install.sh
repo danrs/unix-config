@@ -4,7 +4,7 @@ echo "Installing tools"
 sudo apt install -y vim git zsh
 
 # This repo holds all my unix config files
-if [ $1 = "-f" ]
+if [ ! -z $1 ] && [ $1 = "-f" ]
 then
     FORCE_LINK="-f"
     echo FORCE LINKING
