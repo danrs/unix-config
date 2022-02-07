@@ -138,6 +138,8 @@ set list lcs=tab:\ \
 "make backspacing work over indents, end of line, start of edited text:
 set backspace=indent,eol,start
 
+"auto-wrap git commits at 72 chars
+autocmd FileType gitcommit setlocal tw=72
 
 "CTAGS CSCOPE
 "ctags: generate tags in project root with `ctags -R *` and vim will see them anywhere beneath that
