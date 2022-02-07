@@ -128,7 +128,7 @@ set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set softtabstop=4
 autocmd FileType perl set tabstop=3|set shiftwidth=3|set expandtab|set softtabstop=3
-autocmd FileType json,html,yaml,cmake set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
+autocmd FileType json,html,xhtml,yaml,cmake set tabstop=2|set shiftwidth=2|set expandtab|set softtabstop=2
 autocmd FileType make set tabstop=8|set shiftwidth=8|set noexpandtab|set softtabstop=0
 autocmd FileType go set tabstop=4|set shiftwidth=4|set noexpandtab|set softtabstop=0
 
