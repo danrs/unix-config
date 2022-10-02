@@ -45,6 +45,7 @@ colorscheme elflord
 "let g:lightline = { 'colorscheme': 'powerline' }| colorscheme PaperColor
 let g:lightline = { 'colorscheme': 'powerline' }| colorscheme cyberspace
 syntax on           "syntax highlighting
+set re=0            "use new regex engine (faster typescript syntax)
 set number          "show line numbers
 set ruler           "show column and stuff
 set title           "show title with file name
