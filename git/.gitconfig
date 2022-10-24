@@ -15,8 +15,7 @@
     interactive = auto
     status = auto
 [core]
-    #excludesfile = /Users/dansmith/.gitignore_global
-	excludesfile = /home/dan/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
     default = simple
 [pull]
