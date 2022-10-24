@@ -147,8 +147,8 @@ then
     alias ls='ls -G'
 fi
 
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -al'
+alias la='ls -al'
 alias py="ipython"
 alias gti="git"
 alias grep='grep --color=auto'
