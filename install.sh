@@ -14,6 +14,7 @@ ln -s $FORCE_LINK ~/unix-config/git/.[!.]* ~
 ln -s $FORCE_LINK ~/unix-config/vim/.[!.]* ~
 ln -s $FORCE_LINK ~/unix-config/zsh/.[!.]* ~
 ln -s $FORCE_LINK ~/unix-config/bash/.[!.]* ~
+ln -s $FORCE_LINK ~/unix-config/tmux/.[!.]* ~
 
 echo "Setting up zsh as default shell"
 chsh -s $(which zsh)
