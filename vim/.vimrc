@@ -211,9 +211,6 @@ set foldmethod=indent                           "fold based on indents
 set foldlevelstart=99                           "start with all folds open
 au Filetype cpp setlocal foldmethod=syntax      "fold c++ based on syntax
 
-"auto-wrap git commits at 72 chars
-autocmd FileType gitcommit setlocal tw=72
-
 "CTAGS CSCOPE
 "ctags: generate tags in project root with `ctags -R *` and vim will see them anywhere beneath that
 set tags=./tags,tags;$HOME
