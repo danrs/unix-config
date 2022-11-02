@@ -51,13 +51,6 @@ Plug 'junegunn/fzf.vim'
 "Plug 'dense-analysis/ale'
 "ALEToggle # toggle ALE linting off
 
-" set the runtime path to include fzf
-" the rtp path may need to be modified to suite the OS
-" set rtp+=~/.fzf
-"source /usr/share/doc/fzf/examples/fzf.vim
-nnoremap <C-p> :Files<cr>
-nnoremap <C-t> yiw:Tags <C-r>"<cr>
-nnoremap <leader>mm yiw:Rg <C-r>"<cr>
 
 "Plugatory (unused plugs)
 "Plug 'NLKNguyen/papercolor-theme'
@@ -145,6 +138,13 @@ nnoremap <leader>wq :wq<cr>
 nnoremap <leader>qq :q<cr>
 nnoremap <leader>qa :qa<cr>
 
+" set the runtime path to include fzf
+" the rtp path may need to be modified to suite the OS
+" set rtp+=~/.fzf
+"source /usr/share/doc/fzf/examples/fzf.vim
+nnoremap <C-p> :Files<cr>
+nnoremap <C-t> yiw:Tags <C-r>"<cr>
+nnoremap <leader>mm yiw:Rg <C-r>"<cr>
 
 
 "NAVIGATION
