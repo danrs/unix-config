@@ -46,7 +46,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'preservim/vimux' " for tmux
 "Plug 'octol/vim-cpp-enhanced-highlight' "not sure what this does, test on bigger codebase
-Plug 'dense-analysis/ale'
+
+"install and configure linting
+"Plug 'dense-analysis/ale'
+"ALEToggle # toggle ALE linting off
 
 " set the runtime path to include fzf
 " the rtp path may need to be modified to suite the OS
