@@ -31,32 +31,19 @@ call plug#begin()
 "To add a plugin, simply copy the end of the github url here
 Plug 'hiroakis/cyberspace.vim'
 Plug 'itchyny/lightline.vim'
-
-"New plugs (tbd on keeping)
 Plug 'tpope/vim-fugitive'
-"Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
-"Plug 'docunext/closetag.vim' "SLOW, disabled
 Plug 'tpope/vim-surround'
 Plug 'raimondi/delimitmate'
 "Plug 'majutsushi/tagbar' "for ctags
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'preservim/vimux' " for tmux
-"Plug 'octol/vim-cpp-enhanced-highlight' "not sure what this does, test on bigger codebase
+Plug 'octol/vim-cpp-enhanced-highlight' "does what it says
 
 "install and configure linting
 "Plug 'dense-analysis/ale'
 "ALEToggle # toggle ALE linting off
-
-
-"Plugatory (unused plugs)
-"Plug 'NLKNguyen/papercolor-theme'
-"Plug 'morhetz/gruvbox'
-"Plug 'liuchengxu/space-vim-dark'
-"Plug 'keith/swift.vim'
 
 "Add plugins to &runtimepath
 call plug#end()
@@ -157,12 +144,12 @@ map <C-e> <end>
 imap <C-e> <end>
 cmap <C-e> <end>
 
-"jump to last position when reopening file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+set scrolloff=5         "Start scrolling n lines away from margins
 
-set scrolloff=4         "Start scrolling 4 lines away from margins
+"jump to last position and center cursor when reopening file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"zz" | endif
+endif
 
 
 "SPLITS AND TABS
