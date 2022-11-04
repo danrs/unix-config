@@ -152,6 +152,7 @@ alias la='ls -al'
 alias py="ipython"
 alias gti="git"
 alias grep='grep --color=auto'
+alias rgi='rg -i'
 
 export EDITOR=vim
 
