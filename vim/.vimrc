@@ -33,17 +33,9 @@ Plug 'hiroakis/cyberspace.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-surround'
-Plug 'raimondi/delimitmate'
-"Plug 'majutsushi/tagbar' "for ctags
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'preservim/vimux' " for tmux
 Plug 'octol/vim-cpp-enhanced-highlight' "does what it says
-
-"install and configure linting
-"Plug 'dense-analysis/ale'
-"ALEToggle # toggle ALE linting off
 
 "Add plugins to &runtimepath
 call plug#end()
@@ -118,19 +110,11 @@ noremap <F4> :set number!<CR>
 "yank to clipboard (requires clipboard support, which usually means gvim)
 set clipboard=unnamed
 
-" Easier file saving and closing
-nnoremap <leader>ww :w<cr>
-nnoremap <leader>wa :wa<cr>
-nnoremap <leader>wq :wq<cr>
-nnoremap <leader>qq :q<cr>
-nnoremap <leader>qa :qa<cr>
-
 " set the runtime path to include fzf
 " the rtp path may need to be modified to suite the OS
 " set rtp+=~/.fzf
 "source /usr/share/doc/fzf/examples/fzf.vim
 nnoremap <C-p> :Files<cr>
-nnoremap <C-t> yiw:Tags <C-r>"<cr>
 nnoremap <leader>mm yiw:Rg <C-r>"<cr>
 
 
@@ -157,19 +141,7 @@ endif
 set splitbelow
 set splitright
 
-" Easier split navigation
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" Easier tab navigation
-nnoremap <leader><tab> gt
-nnoremap <leader>m<tab> gT
-nnoremap <leader>tl :tablast<cr>
-nnoremap <leader>tc :tabc<cr>
 set tabpagemax=30 "increase max tabs above 10
-
 
 "INDENTATION
 "auto-indenting
