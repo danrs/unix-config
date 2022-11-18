@@ -7,35 +7,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-"auto-install fzf and rg
-if !empty(glob("~/.fzf/bin/fzf"))
-    if empty(glob("~/.fzf/bin/rg"))
-        if system('uname')=~'Darwin'
-            silent !curl -fLo /tmp/rg.tar.gz
-                        \ https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-apple-darwin.tar.gz
-            silent !tar xzvf /tmp/rg.tar.gz --directory /tmp
-            silent !cp /tmp/ripgrep-0.10.0-x86_64-apple-darwin/rg ~/.fzf/bin/rg
-        else
-            silent !curl -fLo /tmp/rg.tar.gz
-                        \ https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz
-            silent !tar xzvf /tmp/rg.tar.gz --directory /tmp
-            silent !cp /tmp/ripgrep-0.10.0-x86_64-unknown-linux-musl/rg ~/.fzf/bin/rg
-        endif
-    endif
-endif
-
 "vim-plug plugins (Make sure you install them with :PlugInstall)
 call plug#begin()
-
 
 "To add a plugin, simply copy the end of the github url here
 Plug 'hiroakis/cyberspace.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'octol/vim-cpp-enhanced-highlight' "does what it says
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 "Add plugins to &runtimepath
 call plug#end()
@@ -84,9 +66,6 @@ let mapleader = ","     "remap leader from \ to ,
 
 set ignorecase     " Do case insensitive matching
 "set smartcase      " Case insensitive if search string is all lowercase
-"set incsearch      " Incremental search
-"set autowrite      " Automatically save before commands like :next and :make
-"set hidden         " Hide buffers instead of closing when opening new buffer
 
 "tab autocompletion for commands
 set wildmode=longest,list,full
@@ -173,7 +152,7 @@ set foldmethod=indent                           "fold based on indents
 set foldlevelstart=99                           "start with all folds open
 au Filetype cpp setlocal foldmethod=syntax      "fold c++ based on syntax
 
-"CTAGS CSCOPE
+"CTAGS
 "ctags: generate tags in project root with `ctags -R *` and vim will see them anywhere beneath that
 set tags=./tags,tags;$HOME
 

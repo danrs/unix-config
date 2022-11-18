@@ -145,11 +145,11 @@ then
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
     alias ls='ls -G'
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 alias ll='ls -al'
 alias la='ls -al'
-alias py="ipython"
 alias gti="git"
 alias grep='grep --color=auto'
 alias rgi='rg -i'
@@ -158,7 +158,3 @@ export EDITOR=vim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fzf setup
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
