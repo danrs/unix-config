@@ -12,11 +12,6 @@ then
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
     alias ls='ls -G'
-
-    # set up bash completion
-    #brew install bash-completion # use bash-completion@2 for $BASH_VERSION > 4
-    #[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-    #source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi
 
 alias ll='ls -l'
@@ -28,7 +23,6 @@ alias gti="git"
 alias grep='grep --color=auto'
 
 # set up a nice prompt with git integration
-# TODO find a faster version and/or switch to zsh
 #export GITAWAREPROMPT=~/.bash/git-aware-prompt
 #source "${GITAWAREPROMPT}/main.sh"
 #PS1="\u:\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtgrn\]\$\[$txtrst\] "
@@ -41,10 +35,5 @@ export HISTTIMEFORMAT="%h %d %H:%M:%S "
 
 # set default editor
 export EDITOR=vim
-
-# set up nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
