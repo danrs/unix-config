@@ -26,13 +26,12 @@ brew install --cask \
     vlc \
     warp \
     zoom \
-    # uncomment additional programs as desired
-    #chrome \
+    #google-chrome \
     #beyond-compare \
     #discord \
     #inkscape \
     #openvpn-connect \
     #slack \
     #steam \
-    #vscode \
+    #visual-studio-code \
 
