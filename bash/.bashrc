@@ -47,6 +47,7 @@ TXTRED='\[\033[0;91m\]'
 TXTGRN='\[\033[0;92m\]'
 TXTYLW='\[\033[0;93m\]'
 TXTBLU='\[\033[0;94m\]'
+BLDBLU='\[\033[1;94m\]'
 TXTRST='\[\033[0m\]'
 COLOR_GIT_STAGED='\[\033[0;36m\]'
 COLOR_RESET='\[\033[0m\]'
@@ -92,10 +93,11 @@ export PROMPT_DIRTRIM=4
 #TODO colour final command based on prompt success
 # promkpt command has to go in a function so it gets called properly each time
 function prompt() {
-    PS1="\u:\[\e[1;94m\]\w\[$txtrst\] $(git_prompt) \$ "
+    PS1="\u:$BLDBLU\w$TXTRST $(git_prompt)$TXTGRN\$$TXTRST "
 
     # fallback prompt - use this if git falls over
     #PS1="\u:\[\e[1;94m\]\w\[$txtrst\] \$ "
+    #PS1="\u:$BLDBLU\w$TXTRST $TXTGRN\$$TXTRST "
 }
 PROMPT_COMMAND=prompt
 
