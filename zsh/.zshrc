@@ -139,6 +139,7 @@ if [[ "$OSTYPE" == "linux"* ]]
 then
     # fix linux ls colors
     alias ls='ls --color=auto'
+    export LS_COLORS=$LS_COLORS:'di=1;94:'
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
     # osx colour stuff
