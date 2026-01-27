@@ -33,11 +33,12 @@ for c in ${configs[@]}; do
     ln -s $FORCE_LINK ~/unix-config/"$c"/.[!.]* ~
 done
 
+zsh zsh/.zim/zimfw.zsh install
 if [ $SHELL != '/bin/zsh' ]
 then
     echo "Setting zsh as default shell"
-    chsh -s $(which zsh)
-    zsh zsh/.zim/zimfw.zsh install
+    echo "disabled for now"
+    #chsh -s $(which zsh)
 fi
 
 echo "To install vim plugins, open vim and run"
