@@ -28,29 +28,16 @@ then
     alias ls='ls -G'
 fi
 
-#TODO move these to a common alias file for both bash and zsh
-alias ll='ls -l'
-alias la='ls -la'
-alias py="ipython"
-alias gti="git"
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias rgrep='rgrep --color=auto'
-
 # set up a nice prompt with git integration
 #export GITAWAREPROMPT=~/.bash/git-aware-prompt
 #source "${GITAWAREPROMPT}/main.sh"
 #PS1="\u:\[$txtblu\]\W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtgrn\]\$\[$txtrst\] "
-
 TXTRED='\[\033[0;91m\]'
 TXTGRN='\[\033[0;92m\]'
 TXTYLW='\[\033[0;93m\]'
 TXTBLU='\[\033[0;94m\]'
 BLDBLU='\[\033[1;94m\]'
 TXTRST='\[\033[0m\]'
-COLOR_GIT_STAGED='\[\033[0;36m\]'
-COLOR_RESET='\[\033[0m\]'
 
 function git_prompt() {
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
@@ -88,10 +75,9 @@ function git_prompt() {
   fi
 }
 
-
 export PROMPT_DIRTRIM=4
 #TODO colour final command based on prompt success
-# promkpt command has to go in a function so it gets called properly each time
+# prompt command has to go in a function so it gets called properly each time
 function prompt() {
     PS1="\u:$BLDBLU\w$TXTRST $(git_prompt)$TXTGRN\$$TXTRST "
 
@@ -108,8 +94,12 @@ export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
 export HISTCONTROL=ignoreboth
 
-
-# set default editor
 export EDITOR=vim
+
+# import common aliases
+[ -f ~/.alias.sh ] && source ~/.alias.sh
+
+# use ~/.secrets.sh to store env vars that should not be in a repo
+[ -f ~/.secrets.sh ] && source ~/.secrets.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -129,7 +129,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-# Manual config
+###### MANUAL CONFIG BELOW THIS POINT ########
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
@@ -149,13 +149,13 @@ then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-alias ll='ls -al'
-alias la='ls -al'
-alias gti="git"
-alias grep='grep --color=auto'
-alias rgi='rg -i'
-
 export EDITOR=vim
+
+# import common aliases
+[ -f ~/.alias.sh ] && source ~/.alias.sh
+
+# use ~/.secrets.sh to store env vars that should not be in a repo
+[ -f ~/.secrets.sh ] && source ~/.secrets.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
