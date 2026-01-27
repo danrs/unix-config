@@ -3,7 +3,7 @@
 if [[ "$OSTYPE" == "linux"* ]]
 then
     echo "Installing tools"
-    sudo apt install -y vim git zsh ripgrep fzf
+    sudo apt install -y vim git zsh ripgrep fzf curl
 
     # make ctrl+tab change tab in gnome terminal
     echo "Checking for gnome settings to update terminal controls:"
