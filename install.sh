@@ -3,7 +3,10 @@
 if [[ "$OSTYPE" == "linux"* ]]
 then
     echo "Installing tools"
-    sudo apt install -y vim git zsh ripgrep fzf curl
+    sudo apt install -y vim-gtk3 git zsh ripgrep fzf curl tmux git
+
+    # install tmux plugin manager
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
     # make ctrl+tab change tab in gnome terminal
     echo "Checking for gnome settings to update terminal controls:"
@@ -21,7 +24,7 @@ configs=(
     tmux
     vim
     zsh
-    #bash
+    bash
 )
 
 if [ ! -z $1 ] && [ $1 = "-f" ]

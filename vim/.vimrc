@@ -86,7 +86,7 @@ noremap <F4> :set number!<CR>
 "set ttymouse=xterm2
 
 "yank to clipboard (requires clipboard support, which usually means gvim)
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " set the runtime path to include fzf
 " the rtp path may need to be modified to suite the OS
