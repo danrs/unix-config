@@ -103,4 +103,6 @@ export EDITOR=vim
 [ -f ~/.secrets.sh ] && source ~/.secrets.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/home/dans/.pixi/bin:$PATH"
