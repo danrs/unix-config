@@ -106,3 +106,4 @@ export EDITOR=vim
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/home/dans/.pixi/bin:$PATH"
+. "$HOME/.cargo/env"

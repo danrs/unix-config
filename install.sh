@@ -3,10 +3,18 @@
 if [[ "$OSTYPE" == "linux"* ]]
 then
     echo "Installing tools"
-    sudo apt install -y vim-gtk3 git zsh ripgrep fzf curl tmux git
+    sudo apt-get update
+    sudo apt-get install -y vim-gtk3 git zsh ripgrep fzf curl tmux git build-essential fd-find bat gh unzip python3-venv kitty
 
-    # install tmux plugin manager
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ln -s $(which fdfind) ~/.local/bin/fd
+    ln -s /usr/bin/batcat ~/.local/bin/bat
+
+    # install nvim
+	V=$(curl -fsSLo /dev/null -w '%{url_effective}' https://github.com/neovim/neovim/releases/latest | sed 's|.*/||')
+	curl -fLo /tmp/nvim.tar.gz https://github.com/neovim/neovim/releases/download/$V/nvim-linux-x86_64.tar.gz
+	sudo mkdir -p /opt/nvim
+	sudo tar -xzf /tmp/nvim.tar.gz -C /opt/nvim --strip-components=1
+	sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
     # make ctrl+tab change tab in gnome terminal
     echo "Checking for gnome settings to update terminal controls:"

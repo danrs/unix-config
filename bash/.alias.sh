@@ -8,3 +8,4 @@ alias egrep='egrep --color=auto'
 alias rgrep='rgrep --color=auto'
 alias rgi='rg -i'
 alias ssg='ssh'
+alias nv=nvim
