@@ -3,13 +3,26 @@
 if [[ "$OSTYPE" == "linux"* ]]; then
   echo "Installing tools"
   sudo apt-get update
-  sudo apt-get install -y vim-gtk3 git zsh ripgrep fzf curl tmux git build-essential fd-find bat gh unzip python3-venv kitty
+  sudo apt-get install -y vim-gtk3 git zsh ripgrep fzf curl tmux git build-essential fd-find bat gh unzip python3-venv
 
   ln -s $(which fdfind) ~/.local/bin/fd
   ln -s /usr/bin/batcat ~/.local/bin/bat
 
-  # install config
-  git clone git@github.com:danrs/nvim.git ~/.config/nvim
+  # install kitty
+  curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n
+  mkdir -p ~/.local/bin
+  ln -sf ~/.local/kitty.app/bin/kitty ~/.local/bin/kitty
+  ln -sf ~/.local/kitty.app/bin/kitten ~/.local/bin/kitten
+  mkdir -p ~/.local/share/applications
+  cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+  cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+  sed -i "s|Icon=kitty|Icon=$HOME/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" \
+    ~/.local/share/applications/kitty*.desktop
+  sed -i "s|Exec=kitty|Exec=$HOME/.local/kitty.app/bin/kitty|g" \
+    ~/.local/share/applications/kitty*.desktop
+  sed -i "s|TryExec=kitty|TryExec=$HOME/.local/kitty.app/bin/kitty|g" \
+    ~/.local/share/applications/kitty*.desktop
+  echo 'kitty.desktop' > ~/.config/xdg-terminals.list
   git clone git@github.com:danrs/kitty.git ~/.config/kitty
 
   # install nvim
@@ -18,6 +31,7 @@ if [[ "$OSTYPE" == "linux"* ]]; then
   sudo mkdir -p /opt/nvim
   sudo tar -xzf /tmp/nvim.tar.gz -C /opt/nvim --strip-components=1
   sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
+  git clone git@github.com:danrs/nvim.git ~/.config/nvim
 
   # install font
   mkdir -p ~/.local/share/fonts/NerdFonts/GeistMono
